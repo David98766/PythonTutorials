@@ -6,17 +6,17 @@ patients = []
 
 def addPatient():
     # get the data from text fields, no seperate method for get data like last tutorial because we only need it for this function
-     name = entry_name.get()
-     age = entry_age.get()
-     gender = entry_gender.get()
-     condition = entry_condition.get()
+    name = entry_name.get()
+    age = entry_age.get()
+    gender = entry_gender.get()
+    condition = entry_condition.get()
 
     # generate an id for the patient just length of array add 1
-     patient_id = len(patients) + 1
+    patient_id = len(patients) + 1
     # create a patient object to be stored
-     new_patient = Patient(patient_id, name, age, gender, condition)
+    new_patient = Patient(patient_id, name, age, gender, condition)
     #add the object to the array
-     patients.append(new_patient)
+    patients.append(new_patient)
 
 
 def admitPatient():
@@ -48,6 +48,7 @@ def clear_fields():
     entry_age.delete(0, tk.END)
     entry_gender.delete(0, tk.END)
     entry_condition.delete(0, tk.END)
+    patients.clear()
 
 
 
