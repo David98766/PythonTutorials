@@ -3,7 +3,7 @@ class ShoppingItem:
     name = "Unnamed Item"
     price = 0.00
 
-    # constructor to create ShoppingItem object needs two parameters if you dont fill them in, it will default to the initialized attributes above
+    # constructor to create ShoppingItem object needs two parameters if you don't fill them in, it will default to the initialized attributes above
     def __init__(self, name=None, price=None):
         if name is not None:
             self.name = name

@@ -9,7 +9,7 @@ shoppingListItems = []
 class ShoppingListApp(tk.Tk):
     # constructor to create an object called ShoppingListApp child of tkinter class (so has access to all methods in tkinter)
     def __init__(self):
-        # super is used in inheritance so we now inherit all methods
+        # super is used in inheritance so we now inherit all methods from Tkinter
         super().__init__()
         self.title("Shopping List App")
         self.geometry("400x400")
@@ -115,7 +115,6 @@ class ShoppingListApp(tk.Tk):
         # replace label with the quantity value of the cart
         self.cart_quantity_value_label.config(text=str(len(shoppingListItems)))
 
-
-if __name__ == "__main__":
-    app = ShoppingListApp()
-    app.mainloop()
+# Run the project
+app = ShoppingListApp()
+app.mainloop()
