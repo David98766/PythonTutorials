@@ -1,5 +1,5 @@
-from Tutorial2.model.Crisp import Crisp
-from Tutorial2.converter.ConvertToCurrency import convertNumberToPrice
+from updated_cart_tutorial_6.model.Crisp import Crisp
+from updated_cart_tutorial_6.converter.ConvertToCurrency import convertNumberToPrice
 
 # this class is 3rd level of inheritance the grandparent is Product and direct parent Crisp class
 class Tayto(Crisp):
