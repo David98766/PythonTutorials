@@ -1,4 +1,4 @@
-from Tutorial2.model.Product import Product
+from updated_cart_tutorial_6.model.Product import Product
 
 # Inherit characteristics and methods from parent Product
 class Crisp(Product):

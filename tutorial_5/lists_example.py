@@ -15,7 +15,7 @@ print(list[2:4])
 # we can also change the item in the  list by using its index number
 list[1] = "grapes"
 # strawberry is now grapes
-print(list[1])
+print(list[3])
 
 # The alternatives to lists in Python would be arrays, and tuples.
 # Arrays are more memory efficient, but less functional

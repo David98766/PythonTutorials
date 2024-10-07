@@ -1,5 +1,5 @@
-from Tutorial2.model.LineItem import LineItem
-from Tutorial2.converter.ConvertToCurrency import convertNumberToPrice
+from updated_cart_tutorial_6.model.LineItem import LineItem
+from updated_cart_tutorial_6.converter.ConvertToCurrency import convertNumberToPrice
 
 
 class ShoppingCart:
