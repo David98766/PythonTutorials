@@ -7,10 +7,10 @@ taytoCheese = Tayto("Cheese and onion Taytos", 1.50, 30)
 # Call get price for taytoCheese object
 taytoCheese.getPrice()
 
-lineItem2 = LineItem(taytoCheese, 3)
+lineItem = LineItem(taytoCheese, 3)
 
 
 cart = ShoppingCart()
-cart.add_item(lineItem2)
+cart.add_item(lineItem)
 print(cart)
 print(cart.cartTotal())
