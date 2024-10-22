@@ -1,0 +1,23 @@
+Without a database or files, etc, your data is lost when your program stops running
+CSV files can be used to store data beyond the life of a single program.
+
+csv file = Comma-Seperated-Values file
+AKA values are seperated by commas.
+
+Imagine an Excel file, but instead of having the values seperated by cells, you have
+the values seperated by commas.
+
+Just like in Excel, in a CSV file there are effectively rows and columns.
+each line is a row
+columns are defined by commas, so the value before the first comma on each row, make up the first column.
+The top of each column is called the 'header'
+
+A Python dictionary is a collection of key-value pairs,
+where each key is unique and maps to a specific value, allowing for fast data retrieval.
+
+EXAMPLE: [{'name':'Alice'}]
+name = KEY | Alice = Value
+
+Today's tutorial involves a lot of commenting and uncommenting blocks of code.
+To speed things up, use the ctrl+/ shortcut.
+--> highlight a block of code and press ctrl+/ to comment/uncomment the entire block of code.
