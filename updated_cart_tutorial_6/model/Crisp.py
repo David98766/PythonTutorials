@@ -8,6 +8,6 @@ class Crisp(Product):
         super().__init__(name, price)
         self.grams = grams
 
-    # must implement methods from parent, passed here because you would'nt just buy a Crisps it would be a specific pack of Crisps
+    # must implement methods from parent, passed here because you wouldn't just buy a Crisps it would be a specific pack of Crisps
     def getPrice(self):
         pass

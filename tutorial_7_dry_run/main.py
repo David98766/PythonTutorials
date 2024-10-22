@@ -10,7 +10,7 @@ def main():
     app = ContactApp(root)  # Create an instance of the ContactApp class, passing the root window
     root.mainloop()  # Start the Tkinter event loop to display the window and handle events
 
-# The ContactApp class defines the main functionality and GUI of the contact list application.
+# The ContactApp class is an example of Encapsulation, which is a core concept of OOP.
 class ContactApp:
     def __init__(self, root):
         # IMPORTANT
@@ -49,7 +49,7 @@ class ContactApp:
         self.delete_button.grid(row=3, column=2)
         self.listbox.grid(row=0, column=3, rowspan=4)
 
-    # Helper function to clear the input fields (used after add/update/delete operations).
+    # Helper method to clear the input fields (used after add/update/delete operations).
     def clear_entries(self):
         self.name_entry.delete(0, tk.END)
         self.phone_entry.delete(0, tk.END)
@@ -64,7 +64,7 @@ class ContactApp:
 
         # Basic validation for phone number (it must be 10 digits).
         if not phone.isdigit() or len(phone) != 10:
-            messagebox.showerror("Invalid Input", "Phone number must be 10 digits.")
+            messagebox.showerror("Invalid Input", "Phone number must be 10 digits, digits only.")
             return
 
         # Create a new Contact object and add it to the contact list.
@@ -83,13 +83,12 @@ class ContactApp:
         index = self.listbox.curselection()
         # curselection retrieves the line number (index) of the selected item in a listbox (starts with 0)
         # index = line number
-        print(index)
         # returning that variable so other methods can use it
         return index
 
     # Function to load the details of the selected contact from the listbox into the entry fields.
     def load_contact(self, event):
-        index = self.listbox.curselection()  # Get the selected contact's index.
+        index = self.get_selected_index()  # Get the selected contact's index.
         if index:
             index = index[0]
             contact = self.contacts[index]
@@ -106,7 +105,7 @@ class ContactApp:
 
     # Function to update the selected contact's details in the list.
     def update_contact(self):
-        index = self.listbox.curselection()  # Get the selected contact's index.
+        index = self.get_selected_index()  # Get the selected contact's index.
         if not index:
             messagebox.showerror("No Selection", "Please select a contact to update.")
             return
@@ -133,7 +132,7 @@ class ContactApp:
 
     # Function to delete the selected contact from the list and listbox.
     def delete_contact(self):
-        index = self.listbox.curselection()  # Get the selected contact's index.
+        index = self.get_selected_index()  # Get the selected contact's index.
         if not index:
             messagebox.showerror("No Selection", "Please select a contact to delete.")
             return
@@ -151,9 +150,9 @@ class ContactApp:
     # Helper function to update the listbox with the current contact list.
     def update_listbox(self):
         self.listbox.delete(0, tk.END)  # Clear the listbox.
+        #This is a simple for loop, iterating through contacts list
         for contact in self.contacts:
             # Insert each contact's name into the listbox.
             self.listbox.insert(tk.END, contact.name)
-
 
 main()

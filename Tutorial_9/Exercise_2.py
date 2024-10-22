@@ -13,12 +13,14 @@ def extractValueFromLines():
     total = 0.0
 
     for line in fhand:
+        # strip removes whitespace before and after text
         line = line.strip()
         # Look for lines that start with "X-DSPAM-Confidence:"
         if line.startswith("X-DSPAM-Confidence:"):
-            # Split the line to extract the number
+            # Split the line at the colon to extract the number
             parts = line.split(":")
-            # Extract the floating point number and convert to float
+            # Extract the floating point number and convert to float. 1 because it is the second part of the line
+            # (it has been split)
             confidence_value = float(parts[1].strip())
             # Update the total and count
             total += confidence_value
