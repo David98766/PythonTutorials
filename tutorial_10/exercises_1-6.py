@@ -1,10 +1,10 @@
 import csv  # Import the csv module for reading from and writing to CSV files.
 
-# # ------------------------exercise 1---------------------------------
-# # Exercise 1: Write a Python script to open and read the contents of a CSV file,
-# # then print each row to the console.
-#
-# # # Open 'data.csv' in read mode. "newline=''" ensures consistent line endings.
+# ------------------------exercise 1---------------------------------
+# Exercise 1: Write a Python script to open and read the contents of a CSV file,
+# then print each row to the console.
+
+# # Open 'data.csv' in read mode. "newline=''" ensures consistent line endings.
 # with open('data.csv', newline='') as data_file:
 #     # # Create a CSV reader object to read the file line by line.
 #     data_file_reader = csv.reader(data_file)
@@ -17,8 +17,8 @@ import csv  # Import the csv module for reading from and writing to CSV files.
 #         print("Here is row number", i, "of our file:", row)
 
 # ---------------------------exercise 2---------------------------------
-# # Exercise 2: Modify the script from Exercise 1 to store the CSV data (excluding the header) in a list of dictionaries.
-#
+# Exercise 2: Modify the script from Exercise 1 to store the CSV data (excluding the header) in a list of dictionaries.
+
 # data = []  # Initialize an empty list to store the CSV data as dictionaries.
 # with open('data.csv', newline='') as data_file:  # Open 'data.csv' again in read mode.
 #     # # Use DictReader to automatically map each row to a dictionary using header names.
@@ -43,7 +43,7 @@ import csv  # Import the csv module for reading from and writing to CSV files.
 #
 # avg_age = total_age / count
 # avg_score = total_score / count
-
+#
 # # f-strings allow us to insert variables directly into strings.
 # print(f"Average Age: {avg_age}")
 # print(f"Average Score: {avg_score}")
