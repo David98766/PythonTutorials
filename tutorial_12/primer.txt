@@ -1,0 +1,21 @@
+Python has two libraries for dealing with dataframes: csv or Pandas. We only need to import 1.
+
+Dataframes = data structures made up of rows and columns (similar to a database or Excel spreadsheet)
+So the data.csv file we were looking at last week could be considered a dataframe.
+
+The csv library and the Pandas library both have strengths and drawbacks: for example,
+Pandas is generally viewed as more efficient for files with over 1 million lines, csv is
+generally viewed as more straightforward/simple.
+
+So which one you use depends on the type of project you are doing.
+
+Generally speaking, Pandas is more useful to learn as it is used very often for developing AI
+or Machine Learning solutions.
+
+So today we are going to look at the Pandas library.
+To install this we must run the following command in our project terminal:
+
+'pip install pandas'
+
+Go to the tutorials section of IS2208 on Canvas and download the data.csv file
+Drag the data.csv file from your file explorer into the tutorial_12 directory on PyCharm
