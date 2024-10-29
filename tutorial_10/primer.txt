@@ -9,8 +9,8 @@ the values seperated by commas.
 
 Just like in Excel, in a CSV file there are effectively rows and columns.
 each line is a row
-columns are defined by commas, so the value before the first comma on each row, make up the first column.
-The top of each column is called the 'header'
+columns are defined by commas, so each value before the first comma on each row, make up the first column.
+The top row of each column is called the 'header'
 
 A Python dictionary is a collection of key-value pairs,
 where each key is unique and maps to a specific value, allowing for fast data retrieval.
