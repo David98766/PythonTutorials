@@ -1,0 +1,20 @@
+Today we are going to create a semi-functional login & sign up tkinter application
+
+We need to download software called DB Browser. This is an open source tool for managing SQLite databases.
+
+We are downloading the win64.msi Standard (MSI) installer for Win64
+Please make sure you download that exact version.
+at this link: https://sqlitebrowser.org/blog/version-3-13-1-released/
+
+Once you have the installer downloaded, double click on it in your file explorer (to run the installer)
+
+Click next and default options the whole way through.
+
+Now you need to copy some code down, which I will explain.
+
+Start by creating a main.py file in your tutorial_14 file.
+
+Once we have the code down, I will show ye what that DB Browser is for.
+
+We will need to open the user.db in DB Browser, and from there we will need to select the user table in the
+Table dropdown at the top left
