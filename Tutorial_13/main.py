@@ -4,6 +4,7 @@ from Tutorial_13.model.Car import Car
 
 if __name__ == "__main__":
     # create CarDao object
+    # the () after CarDao, calls the __init__ method of the CarDao class
     myCarDao = CarDao()
     # print all the objects in the database
     print(myCarDao.getAllCars())

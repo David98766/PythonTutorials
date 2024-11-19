@@ -1,11 +1,12 @@
 import pandas as pd
+import time
 
 ##Load the CSV File into a dataframe
 ##dataframe is being called df
 ##Pandas library is being called pd
 
 df = pd.read_csv('data.csv')
-## Print the datraframe as a string in the output terminal (not the project terminal)
+## Print the dataframe as a string in the output terminal (not the project terminal)
 ##to_string() prints the entire dataframe
 #print(df.to_string())
 
@@ -22,15 +23,15 @@ df = pd.read_csv('data.csv')
 #print(df)
 
 ##lets change the Pandas max_rows settings
-#pd.options.display.max_rows = 9999
+pd.options.display.max_rows = 9999
 ##now we will be able to print the entire dataframe into our terminal using the print(df) statement
 #print(df)
 
 ## print the first 5 rows:
-#print(df.head())
+#print("This is the head:\n", df.head(), sep="")
 
 ## print the last five rows
-#print(df.tail())
+#print("This is the tail\n", df.tail(), sep="")
 
 ## You can set a column as an index. Usually we would use an id column for this, but ours does not
 ## have an id column so we will just use Maxpulse. Notice how the Maxpulse column is now on the left
@@ -46,31 +47,40 @@ df = pd.read_csv('data.csv')
 ## sources is easy. Its ultimately the same process, except that you're no longer passing a file
 ## path, but a URL
 ## Webpage URL
-#url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
-
-## Define the column names
-#col_names = ["sepal_length_in_cm",
+# url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+#
+# # Define the column names
+# col_names = ["sepal_length_in_cm",
 #            "sepal_width_in_cm",
 #            "petal_length_in_cm",
 #            "petal_width_in_cm",
-#           "class"]
+#            "class"]
+#
+# # Read data from URL
+# iris_data = pd.read_csv(url, names=col_names)
+#
+# print(iris_data.head())
 
-## Read data from URL
-#iris_data = pd.read_csv(url, names=col_names)
+def load_sports_data():
+    # URL for a csv file about MLB team from 2012
+    url = "https://people.sc.fsu.edu/~jburkardt/data/csv/mlb_teams_2012.csv"
 
-#print(iris_data.head())
+    # Define the column names
+    col_names = ["Team", "Payroll(millions)", "Wins"]
 
-## URL for a csv file about MLB team from 2012
-#url = "https://people.sc.fsu.edu/~jburkardt/data/csv/mlb_teams_2012.csv"
+    # Read data from URL
+    # skiprows skips the first row (headers) because we are assigning the col_names manually
+    # We are using the Team column as our index, as it is essentially a Primary Key
+    sports_data = pd.read_csv(url, names=col_names, skiprows=1, index_col="Team")
+    # Print the whole thing
+    print(sports_data.to_string())
 
-## Define the column names
-#col_names = ["Team", "Payroll(millions)", "Wins"]
+# This is a little like using an Application Programming Interface (API)
+refresh_interval = 5 # seconds
 
-## Read data from URL
-## skiprows skips the first row (headers) because we are assigning the col_names manually
-## We are using the Team column as our index, as it is essentially a Primary Key
-#sports_data = pd.read_csv(url, names=col_names, skiprows=1, index_col="Team")
-## Print the whole thing
-#print(sports_data.to_string())
-
-## This is a little like using an Application Programming Language (API)
+# while true means it will run until it is manually stopped or interrupted
+while True:
+    # calling the function that grabs the data from the web file
+    load_sports_data()
+    # setting a pause or 'wait' time that pauses the loop (uses refresh_interval as an argument)
+    time.sleep(refresh_interval)

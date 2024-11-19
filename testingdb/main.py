@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
-from tutorial_14.dao.UserDao import UserDao  # Importing UserDao class for database operations
-from tutorial_14.model.User import User  # Importing User class to represent a user object
+from testingdb.dao.UserDao import UserDao  # Importing UserDao class for database operations
+from testingdb.model.User import User  # Importing User class to represent a user object
 
 # Create an instance of UserDao
 userDao = UserDao()
@@ -15,7 +15,7 @@ class App(tk.Tk):  # App inherits from tk.Tk to create the main window
         self.switch_frame(LoginPage)  # Start the app with the LoginPage
 
     def switch_frame(self, frame_class):
-        # Destroys current frame and replaces it with a new one.
+        """Destroys current frame and replaces it with a new one."""
         new_frame = frame_class(self)  # Create an instance of the new frame
         if hasattr(self, "_current_frame"):  # Check if there is an existing frame
             self._current_frame.destroy()  # Remove the current frame

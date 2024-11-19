@@ -14,6 +14,7 @@ class CarDao:
         # we use cursor objects to execute sql queries
         self.cursor = self.connection.cursor()
         # using the cursor to create the car table if it dosen't exist
+        # three quotes because that is how you do a multiline string in Python
         self.cursor.execute("""CREATE TABLE IF NOT EXISTS car (
             id INTEGER PRIMARY KEY,
             make TEXT,

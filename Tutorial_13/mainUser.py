@@ -17,7 +17,7 @@ class mainUser:
             return False
 
     def mainUser(self):
-        user = User(1, "Jane", "Doe", "Jane@gmail.com", "pw1")
+        user = User(6, "Jane", "Doe", "Jane@gmail.com", "pw1")
         self.userDao.addUser(user)
 
         email = input("enter your email: ")

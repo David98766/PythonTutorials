@@ -23,9 +23,9 @@ class UserDao:
 
     def addUser(self, user):
         # SQL query for insert; the '?' are placeholders for variables
-        sql = ("INSERT INTO user VALUES(NULL, ?, ?, ?, ?)")
+        sql = ("INSERT INTO user VALUES(?, ?, ?, ?, ?)")
         # args is a tuple with the attributes of a user in order: firstName, lastName, email, password
-        args = (user.first_name, user.last_name, user.email, user.password)
+        args = (user.id, user.first_name, user.last_name, user.email, user.password)
         # using the cursor to execute the query with the args tuple, filling in the '?' placeholders
         self.cursor.execute(sql, args)
         self.connection.commit()
