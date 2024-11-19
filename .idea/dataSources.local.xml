@@ -88,11 +88,12 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
-    <data-source name="example" uuid="7b6e5a98-c83d-47a5-85ae-70aa1a569a0c">
+    <data-source name="students.db" uuid="eb35077b-e6e7-40e1-87ba-eaadddf5039f">
       <database-info product="SQLite" version="3.45.1" jdbc-version="4.2" driver-name="SQLite JDBC" driver-version="3.45.1.0" dbms="SQLITE" exact-version="3.45.1" exact-driver-version="3.45">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <secret-storage>master_key</secret-storage>
       <auth-provider>no-auth</auth-provider>
       <schema-mapping>
         <introspection-scope>
