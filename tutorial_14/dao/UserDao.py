@@ -43,12 +43,12 @@ class UserDao:
 
     def getUser(self, email, password):
         # Using a "with" statement to open a new database connection that will be automatically closed after use
-        with sqlite3.connect("user.db") as connection:
-            cursor = connection.cursor()
+      #  with sqlite3.connect("user.db") as connection:
+         #   cursor = connection.cursor()
             # SQL query to retrieve a user based on email and password
-            sql = "SELECT * FROM user WHERE email = ? AND password = ?"
-            args = (email, password)
-            row = cursor.execute(sql, args).fetchone()  # Execute the query and fetch one result
+        sql = "SELECT * FROM user WHERE email = ? AND password = ?"
+        args = (email, password)
+        row = self.cursor.execute(sql, args).fetchone()  # Execute the query and fetch one result
 
         if row:
             # If a matching user is found, return a User object with the retrieved data
