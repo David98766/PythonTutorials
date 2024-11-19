@@ -2,7 +2,6 @@ import sqlite3
 
 from Tutorial_13.model.Car import Car
 
-
 # Define the DAO class
 class CarDao:
 

@@ -1,4 +1,3 @@
-import sqlite3
 # Define the Car class
 class Car:
 

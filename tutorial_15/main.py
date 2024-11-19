@@ -211,19 +211,20 @@ class CarShowRoom(tk.Tk):
         if not selected_index:  # Check if an item is selected
             messagebox.showerror("Update Error", "Please select a car to update.")
             return
-
         # Get the car from the allCars list based on the selected index
         car = self.allCars[selected_index[0]]
 
+        carToUpdate = self.myCarDao.getCar(car.id)
+
         # Update the car's details with the values from the entry fields
-        car.make = self.make_entry.get()
-        car.model = self.model_entry.get()
-        car.engine_capacity = float(self.capacity_entry.get())
-        car.top_speed = int(self.speed_entry.get())
-        car.price = int(self.price_entry.get())
+        carToUpdate.make = self.make_entry.get()
+        carToUpdate.model = self.model_entry.get()
+        carToUpdate.engine_capacity = float(self.capacity_entry.get())
+        carToUpdate.top_speed = int(self.speed_entry.get())
+        carToUpdate.price = int(self.price_entry.get())
 
         # Update the car in the database
-        self.myCarDao.updateCar(car)
+        self.myCarDao.updateCar(carToUpdate)
 
         # Reload all cars from the database and update self.allCars
         self.allCars = self.myCarDao.getAllCars()

@@ -13,6 +13,7 @@ class App(tk.Tk):  # App inherits from tk.Tk to create the main window
         self.title("Login and Sign Up")  # Set the window title
         self.geometry("400x300")  # Set the window size
         self.switch_frame(LoginPage)  # Start the app with the LoginPage
+        self.userDao = UserDao
 
     def switch_frame(self, frame_class):
         """Destroys current frame and replaces it with a new one."""
@@ -83,10 +84,10 @@ class SignUpPage(tk.Frame):  # SignUpPage inherits from tk.Frame to create a fra
         self.password_entry.pack(pady=5)
 
         # Sign Up Button
-        tk.Button(self, text="Sign Up", command=self.sign_up).pack(pady=10)  # Button to trigger sign-up
+        tk.Button(self, text="Sign Up", command=self.sign_up).pack(pady=5)  # Button to trigger sign-up
 
         # Switch to Login Page
-        tk.Button(self, text="Back to Login", command=lambda: master.switch_frame(LoginPage)).pack(pady=5)  # Button to switch to LoginPage
+        tk.Button(self, text="Back to Login", command=lambda: master.switch_frame(LoginPage)).pack(pady=0)  # Button to switch to LoginPage
 
     def sign_up(self):
         first_name = self.first_name_entry.get()  # Get the first name input
