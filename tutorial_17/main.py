@@ -122,7 +122,7 @@ class StudentApp:
                 self.CRUDFinal.insert([(name, int(age), grade)])
                 # Show a success message
                 messagebox.showinfo("Success", "Student added successfully.")
-                # Refresh the student list
+                # Refresh the student listbox
                 self.show_students()
             except Exception as e:
                 # Show an error message if the operation fails
