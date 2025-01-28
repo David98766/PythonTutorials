@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <!-- The block title and endblock here are placeholders for a child template to fill in -->
+  <!-- 'block title' need this key word in child template to tell Jinja2 it's the title part -->
+    <title>{% block title %} {% endblock %} - FlaskApp</title>
+    <style>
+        nav a {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+      <!-- hyperlinks created <a> tag and href is for assigning them to the url after = sign -->
+      <!-- the url_for() is a function by Jinja2 that will take the function name in app file -->
+      <!-- and use the url endpint you gave that function. -->
+      <!-- for example in app.py the function hello() has the endpoint /hello this will replace url_for(hello) with /hello -->
+      <!-- The below code will allow the client to route to different web pages with button presses -->
+        <a href="{{ url_for('hello') }}">FlaskApp</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('comments') }}">Comments</a>
+        <a href="{{ url_for('comments2') }}">Comments 2</a>
+
+    </nav>
+    <hr>
+    <div class="content">
+      <!-- This is also a placeholder that will be filled in by child templates -->
+      <!-- 'block content' need this key word in child template to tell Jinja2 it's the title part -->
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>
