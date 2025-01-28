@@ -1,0 +1,8 @@
+<!-- this calls base.html from the templates package -->
+{% extends 'base.html' %}
+
+<!-- this will override base.html block content section  -->
+{% block content %}
+    <h1>{% block title %} About {% endblock %}</h1>
+    <h3>FlaskApp is a Flask web application written in Python.</h3>
+{% endblock %}
