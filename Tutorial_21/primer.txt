@@ -1,0 +1,38 @@
+Jinja2 (the template language we are using for Flask)
+Jinja2 has filters which are tools used to transform or manipulate
+variables in Jinja templates.
+
+They allow you to apply specific transformations to data before
+rendering it in a template. Filters are applied using the pipe '|'
+symbol (usually shift + the backslash button), usually followed
+by the filter name.
+
+for example: {{ "hello world" | capitalize }}
+
+In this example you can see the jinja curly braces: {{ }},
+
+the string we are transforming: "hello world",
+
+and the pipe and filter: | capitalize,
+
+this will result in "Hello world" being displayed
+on the html page (the template) rather than
+"hello world"
+
+you can also chain filters:
+
+{{ "  hello world   " | trim | upper }}
+Output: 'HELLO WORLD'
+
+The Jinja2 Built in filters we are using today:
+upper
+join
+
+In Jinja template language, there are special loop variables
+that give you additional functionality with for loops, and
+their iterations. 'loop.index' is a special variable used within
+a for loop to number the iterations of a for loop.
+
+loop.index is only one of many loop-specific variables
+available in Jinja2 that can help you create more
+dynamic and flexible templates.

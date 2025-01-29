@@ -3,6 +3,7 @@
 {% block content %}
     <h1>{% block title %} Comments {% endblock %}</h1>
     <div style="width: 50%; margin: auto">
+        <!-- This part makes every second comment a different color. -->
         {% for comment in comments %}
             {% if loop.index % 2 == 0 %}
                 {% set bg_color = '#e6f9ff' %}
@@ -10,7 +11,7 @@
                 {% set bg_color = '#eee' %}
             {% endif %}
 
-            <div style="padding: 10px; background-color: {{ bg_color }}; margin: 20px">
+            <div style="padding: 10px; background-color:{{ bg_color }}; margin: 20px">
                 <p>#{{ loop.index }}</p>
                 <p style="font-size: 24px">{{ comment }}</p>
             </div>

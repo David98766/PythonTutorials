@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Comments {% endblock %}</h1>
+    <div style="width: 50%; margin: auto">
+        {% for comment in comments %}
+            <!-- Loop.index is a special variable available inside for loops.
+            It is specific to Jinja2. It starts counting from 1 instead of 0
+           'index' in the next line is nothing to do with the index.html page,
+            it is in relation to the order of the objects in the for loop
+            so the following line is excluding the 2nd object in the
+            for loop (the second comment/ iteration of the for loop) -->
+            {% if loop.index != 2 %}
+                <div style="padding: 10px; background-color: #EEE; margin: 20px">
+                    <!--  we are putting #comment_number in a paragraph in the comment-->
+                    <p>#{{ loop.index }}</p>
+                    <!-- Here we are adding the 'upper' jinja FILTER using the pipe
+                    symbol, which will modify the value of the comment to be uppercase. -->
+                    <p style="font-size: 24px">{{ comment | upper }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <!-- Horizontal rule -->
+        <hr>
+        <div>
+            <!-- We are using the join filter (this is specific to jinja as well
+             to combine all the comments in the comments list into a single string,
+              seperated by a dash (the dash is an argument to the join() filter) -->
+            <p>{{ comments | join(" - ") }}</p>
+        </div>
+    </div>
+{% endblock %}

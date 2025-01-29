@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<!-- Rows are wrappers for columns -->
+<!-- In a grid layout only columns can be children of rows -->
+<div class="row" style="background-color: #fff5c3; text-align: center;">
+  <div class="col">
+    One of three columns
+  </div>
+  <div class="col">
+    One of three columns
+  </div>
+  <div class="col">
+    One of three columns
+  </div>
+</div>
+<div class="row" style="background-color: pink; text-align: center;">
+  <div class="col">
+    One column
+  </div>
+</div>
+
+<!-- You can specify the width of columns,
+ and you can have columns of different widths in one row -->
+<div class="row justify-content-center" style="text-align: center; align-items: center;">
+  <!-- There can be up to 12 columns in a row -->
+  <div class="col-2" style="background-color: orange;">
+    One of three columns
+  </div>
+  <div class="col-6" style="background-color: palegreen">
+    One of three columns (wider)
+  </div>
+  <div class="col-2" style="background-color: orange;">
+    One of three columns
+  </div>
+</div>
+<!-- Row with 2 Columns -->
+<div class="row" style="background-color: lightblue; text-align: center;">
+  <div class="col">
+    One of two columns
+    <hr>
+  </div>
+  <div class="col">
+    One of two columns
+    <hr>
+  </div>
+</div>
+
+<!-- Another row with 2 Columns -->
+<div class="row" style="background-color: lightblue; text-align: center;">
+  <!-- Adding Product cards to columns (random image off of google) -->
+  <div class="col">
+    <div class="card" style="width: 18rem; margin:auto; margin-bottom: 10px;">
+      <img src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?cs=srgb&dl=pexels-madebymath-90946.jpg&fm=jpg" class="card-img-top" alt="Placeholder">
+      <div class="card-body">
+          <h5 class="card-title">Bootstrap Card</h5>
+          <p class="card-text">This is a simple card example.</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card" style="width: 18rem; margin:auto; margin-bottom: 10px;">
+      <img src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?cs=srgb&dl=pexels-madebymath-90946.jpg&fm=jpg" class="card-img-top" alt="Placeholder">
+      <div class="card-body">
+          <h5 class="card-title">Bootstrap Card</h5>
+          <p class="card-text">This is a simple card example.</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--
+
+Sometimes you will see column classes in the following format: col-x-y
+ where x is the screen size where you want the column settings to apply,
+ e.g. md = medium = laptop and y = the number from 1-12 of grid columns you
+ want this column to occupy e.g. 6: col-md-6
+
+ Therefore, it would make sense for a real webapp to have columns like this:
+ <div class="col-sm-6 col-md-4 col-lg-3">Box 1</div>
+
+  -->
+
+{% endblock %}
