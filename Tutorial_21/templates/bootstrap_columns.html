@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-
-
 <!-- Rows are wrappers for columns -->
 <!-- In a grid layout only columns can be children of rows -->
 <div class="row" style="background-color: #fff5c3; text-align: center;">
@@ -20,7 +18,6 @@
     One column
   </div>
 </div>
-
 <!-- You can specify the width of columns,
  and you can have columns of different widths in one row -->
 <div class="row justify-content-center" style="text-align: center; align-items: center;">
@@ -35,6 +32,7 @@
     One of three columns
   </div>
 </div>
+
 <!-- Row with 2 Columns -->
 <div class="row" style="background-color: lightblue; text-align: center;">
   <div class="col">
@@ -52,7 +50,8 @@
   <!-- Adding Product cards to columns (random image off of google) -->
   <div class="col">
     <div class="card" style="width: 18rem; margin:auto; margin-bottom: 10px;">
-      <img src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?cs=srgb&dl=pexels-madebymath-90946.jpg&fm=jpg" class="card-img-top" alt="Placeholder">
+      <img src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?cs=srgb&dl=pexels-madebymath-90946.jpg&fm=jpg"
+           class="card-img-top">
       <div class="card-body">
           <h5 class="card-title">Bootstrap Card</h5>
           <p class="card-text">This is a simple card example.</p>
@@ -71,10 +70,7 @@
     </div>
   </div>
 </div>
-
-
 <!--
-
 Sometimes you will see column classes in the following format: col-x-y
  where x is the screen size where you want the column settings to apply,
  e.g. md = medium = laptop and y = the number from 1-12 of grid columns you
@@ -84,5 +80,4 @@ Sometimes you will see column classes in the following format: col-x-y
  <div class="col-sm-6 col-md-4 col-lg-3">Box 1</div>
 
   -->
-
 {% endblock %}
