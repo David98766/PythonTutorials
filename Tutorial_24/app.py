@@ -9,9 +9,8 @@ taskDao = TaskDao()
 @app.route('/')
 def index():
     # Example here showing we can make TaskDao object anywhere will call the original created on top
-    task_Dao = TaskDao()
     # using Dao to get all tasks from the object
-    tasks = task_Dao.get_all_tasks()
+    tasks = taskDao.get_all_tasks()
     return render_template('index.html',
                            tasks=tasks)
 

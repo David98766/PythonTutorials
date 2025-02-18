@@ -22,6 +22,10 @@
         <br>
         <button type="submit">Submit</button>
     </form>
+        <!--
+        delete button in the edit page very similar to the one on index
+        just performs different logic
+        -->
    <hr>
     <form action="{{ url_for('delete', id=post['id']) }}" method="POST">
         <input type="submit" value="Delete Post"

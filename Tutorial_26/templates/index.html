@@ -7,6 +7,10 @@
             <p>{{ post['created'] }}</p>
             <h2>{{ post['title'] }}</h2>
             <p>{{ post['content'] }}</p>
+                <!--
+         using the post list we have passed in to index and taking
+         the specific ID from a specific post picked to redirect to edit
+        -->
             <a href="{{ url_for('edit', id=post['id']) }}">Edit</a>
         </div>
     {% endfor %}
