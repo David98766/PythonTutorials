@@ -1,5 +1,6 @@
 import sqlite3
-from flask import Flask, render_template, request, flash, redirect, url_for, abort
+from flask import (Flask, render_template, request, flash, redirect
+, url_for, abort)
 
 app = Flask(__name__)
 # session key to allow fo session handling
@@ -20,8 +21,6 @@ def get_post(post_id):
     if post is None:
         abort(404)
     return post
-
-
 @app.route('/')
 def index():
     # grabbing the connection first
@@ -32,8 +31,6 @@ def index():
     conn.close()
     # pass return of the query with the page to be rendered
     return render_template('index.html', posts=posts)
-
-
 
 @app.route('/create/', methods=('GET', 'POST'))
 def create():
@@ -50,7 +47,8 @@ def create():
             # Insert the new record to the database
             conn = get_db_connection()
             # pass in parameters using tuple
-            conn.execute('INSERT INTO posts (title, content) VALUES (?, ?)',
+            conn.execute('INSERT INTO posts (title, content)'
+                         ' VALUES (?, ?)',
                          (title, content))
             # commit transaction and close connection
             conn.commit()
@@ -106,7 +104,6 @@ def delete(id):
     conn.close()
     flash('"{}" was successfully deleted!'.format(post['title']))
     return redirect(url_for('index'))
-
 
 
 if __name__ == '__main__':
