@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog List</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .blog-container { max-width: 800px; margin: 0 auto;
+            padding: 20px; }
+        .blog { margin-bottom: 20px; padding: 10px;
+          border: 1px solid #ddd; border-radius: 5px; }
+        .blog-title { font-size: 1.5em; margin-bottom: 0.5em; }
+        .blog-author { color: #555; margin-bottom: 0.5em; }
+    </style>
+</head>
+<body>
+
+<div class="blog-container">
+    <h1>Blog List</h1>
+    {% for blog in blogs %}
+        <div class="blog">
+            <div class="blog-title">{{ blog.blogTitle }}</div>
+            <div class="blog-author">By {{ blog.blogAuthor }}</div>
+            <div class="blog-content">{{ blog.blogContent }}</div>
+        </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
