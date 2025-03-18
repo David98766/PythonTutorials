@@ -1,9 +1,13 @@
 from flask import Flask, render_template
-from BlogDao.BlogDao import BlogDao
+from dao.BlogDao import BlogDao
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your secret key'
 
+blogDao = BlogDao()
 @app.route('/')
 def index():
+    blogs = blogDao.getAllBlogs()
+    return render_template('index.html', blogs=blogs)
 
-    return render_template('index.html',)
+if __name__ == '__main__':
+    app.run(debug=True)
